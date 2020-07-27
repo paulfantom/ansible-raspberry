@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Pawel Krupa
+  description: Bootstrap raspberry Pi
+  license: MIT
+  company: none
+  role_name: raspberry
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+    - name: Debian
+      versions:
+        - buster
+  galaxy_tags:
+  - raspberry
+
+dependencies: []
