@@ -54,7 +54,7 @@
     - {src: "/tmp", options: "nodev,nosuid,size=10%"}
     - {src: "/var/log", options: "nodev,noexec,nosuid,size=10%"}
 
-- name: Control wifi and bluetooth enablement
+- name: Blacklist wifi and bluetooth kernel modules
   copy:
     dest: /etc/modprobe.d/raspi-blacklist.conf
     content: |

@@ -4,7 +4,7 @@ enable_uart=0
 
 gpu_mem={{ rpi_gpu_mem }}
 
-dtparam=audio=off
+dtparam=audio={% if rpi_sound %}on{% else %}off{% endif %}
 
 [all]
 {% if not rpi_wifi %}
