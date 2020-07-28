@@ -17,7 +17,11 @@ dtoverlay=disable-bt
 {% endif %}
 
 dtparam=pwr_led_trigger=heartbeat
-dtparam={% for point in rpi_fan %}poe_fan_temp{{ loop.index0 }}={{ point.temp }},poe_fan_temp{{ loop.index0 }}_hyst={{ point.hyst }}{% if not loop.last %},{% endif %}{% endfor %}
+
+dtoverlay=rpi-poe
+{% for setpoint in rpi_fan %}
+dtparam=poe_fan_temp{{ loop.index0 }}={{ setpoint.temp }},poe_fan_temp{{ loop.index0 }}_hyst={{ setpoint.hyst }}
+{% endfor %}
 
 # In theory this should help with unstable PoE HATs
 max_usb_current=1

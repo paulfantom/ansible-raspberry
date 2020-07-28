@@ -6,8 +6,13 @@ rpi_swap_size: 400
 rpi_wifi: false
 rpi_bt: false
 
+# Setpoints for PoE HAT fan. Max 4 setpoints allowed.
 rpi_fan:
-  - temp: 70000
-    hyst: 10000
-  - temp: 82000
-    hyst: 15000
+  - temp: 30000
+    hyst: 1000
+  - temp: 50000
+    hyst: 5000
+  - temp: 75000
+    hyst: 5000
+  - temp: 80000
+    hyst: 5000
