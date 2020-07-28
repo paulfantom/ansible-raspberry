@@ -6,6 +6,8 @@ gpu_mem={{ rpi_gpu_mem }}
 
 dtparam=audio={% if rpi_sound %}on{% else %}off{% endif %}
 
+{{ rpi_dtoverlay_add }}
+
 [all]
 {% if not rpi_wifi %}
 dtoverlay=pi3-disable-wifi

@@ -8,6 +8,8 @@ rpi_bt: false
 
 rpi_sound: false
 
+rpi_dtoverlay_add: ""
+
 # Setpoints for PoE HAT fan. Max 4 setpoints allowed.
 rpi_fan:
   - temp: 30000
