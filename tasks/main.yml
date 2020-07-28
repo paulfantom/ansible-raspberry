@@ -6,6 +6,18 @@
   tags:
     - always
 
+# Necessary because 'backup: true' doesn't work on vfat FS. More in
+# https://github.com/ansible/ansible/issues/44689
+- name: Backup config.txt and cmdline.txt to /root
+  copy:
+    src: "{{ item }}"
+    dest: "/root/{{ item | basename }}"
+    remote_src: yes
+    mode: 0644
+  with_items:
+    - "{{ _rpi_config_file }}"
+    - "{{ _rpi_cmdline_file }}"
+
 - name: Configure raspberry overlays
   template:
     src: "config.txt.j2"
